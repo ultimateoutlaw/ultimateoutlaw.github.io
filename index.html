@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UI Autocomplete - H&M</title>  
+  <link rel="stylesheet" href="styles.css">
+ 
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>  
+  <script type="text/javascript" src="hm-assignJS.js"></script>  
+</head>
+<body>
+ 
+    <div class="main-container" role="main">
+
+        <!-- Questionnaire #3 section -->
+        <section class="questionnaire-three-section">                      
+            <div class="user-input-container">
+                <h2>Questionnaire #3</h2><hr class="hr-line"><br>
+                <form>
+                    <label for="cities">Favourite Sweden City: </label>
+                    <input type="text" placeholder="Enter a City Name.." onkeyup="getUserInput(this.value)" id="cities" class="camel-case-text ui-autocomplete-input">
+                    <button class="close-icon" type="reset"></button>                    
+                </form>
+            </div>
+            
+            <div class="history-container">
+                <div class="history-header">
+                    <div class="history-text"><b>Search History</b></div>
+                    <button class="common-btn clear-all-btn" onclick="clearAllSearch()" aria-label="Clear" type="button">Clear All</button>
+                </div>
+                <hr class="search-history-hr">
+                <div class="no-history-container" id="no-history-container">Wowza ! Nothing searched for yet !!</div>
+                <div id="log" class="log search-history"></div>            
+            </div>
+        </section>
+
+        <!-- Questionnaire #2 section -->
+        <section class="questionnaire-two-section user-input-container"> 
+            <h2>Questionnaire #2</h2><hr class="hr-line"><br>
+            <a id="surveyMonkeyLink" class="survey-link">Click here for SurveyMonkey Questionnaire</a>			
+            
+            <!-- Modal Content -->
+			<div id="responseModal" class="modal-container">			  
+			  <div class="modal-content">
+				<span class="close">&times;</span>
+				<embed src="questionnaireTwoResponse.pdf#page=1&zoom=90" frameborder="0" width="100%" height="400px">
+			  </div>
+			</div>
+        </section>
+
+        <!-- Questionnaire #1 section -->
+        <section class="questionnaire-one-section user-input-container">
+            <h2>Questionnaire #1</h2><hr class="hr-line"><br>
+            <div class="">
+                <button class="common-btn assessment-one-toggle-btn" onclick="showAssessmentOne()">Toggle</button>
+                <div class="assessment-one-container" id="assessment-one-container">
+                    <button class="styled-delete-btn" value="Delete" name="Delete Button"><b>Delete <span class="delete-close-x">X</span></b></button>                
+                </div>
+            </div>
+        </section>    
+
+    </div>     
+
+</body>
+</html>
